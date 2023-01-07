@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height: 98vh;
+    padding: 0px;
+    margin: 0;
+}
+
+.principal{
+    max-width: 700px;
+    margin: auto;
+}
+
+/*  HEADER */
+
+.principal header{
+    padding: 15px;
+    background-image: linear-gradient(180deg, #f12711, #f5af19);
+}
+
+.principal header .input-container{
+    position: relative;
+}
+
+.principal header input{
+    width: 100%;
+    padding: 17px 17px 17px 40px;
+    border: none;
+    border-radius: 5px;
+}
+
+.principal header .material-symbols-outlined{
+    color: lightgray;
+    font-weight: 200;
+    position: absolute;
+    left: 10px;
+    top: 13px;
+}
+
+.principal header input:focus{
+    outline: none;
+}
+
+/* LOGO E INFOS */
+
+.principal .logo-info-container{
+    color: white;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.principal .logo-info-container img{
+    width: 100px;
+    border-radius: 50%;
+}
+
+.principal .logo-info-container h4{
+    margin-top: 28px;
+    margin-bottom: 12px;
+}
+
+.principal .logo-info-container p{
+    font-size: 12px;
+    color: rgb(240, 240, 240);
+}
+
+/* BTNS - TOPICOS */
+
+.topicos-btns{
+    display: flex;
+    padding: 15px 0px;
+    gap: 15px;
+    justify-content: center;
+}
+
+.topicos-btns button{
+    user-select: text;
+    width: 340px;
+    padding: 20px 0px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid lightgray;
+}
+
+.topicos-btns button:hover{
+    box-shadow: 0px 0px 4px lightgray;
+}
+
+
+/* Produtos */
+
+.produtos-container{
+    padding: 20px;
+    background-color: rgb(241, 241, 241);
+    display: flex;
+    gap: 15px;
+}
+
+.produto{
+    width: 322px;
+    background-color: white;
+}
+
+.produto img{
+    display: block;
+    width: 100%;
+}
+
+.produto h2{
+    margin-left: 20px;
+    font-weight: 200;
+}
+
+
+
+/* MEDIA QUERY */
+
+@media (max-width: 700px){
+    .topicos-btns{
+        padding: 15px;
+    }
+
+    .produto h2{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 400px){
+    .principal .logo-info-container{
+        flex-direction: column;
+    
+        align-items: center;
+        text-align: center;
+    }
+
+    .principal .logo-info-container h4{
+        margin-top: -25px;
+    }
+
+    /* topico btns */
+
+    .topicos-btns{
+        padding: 15px 0px;
+        flex-wrap: wrap;
+    }
+
+    .topicos-btns button{
+        width: 320px;
+    }
+
+}
+
+@media (max-width: 360px){
+    .produtos-container{
+        flex-wrap: wrap;
+    }
+}
