@@ -90,6 +90,7 @@ function procurar(e){
         }
         logo_info_container.classList.add('hide')
         msg_error.classList.remove('hide')
+        search_input.setAttribute('inputmode', 'none')
 
         let busca_do_usuario = search_input.value.toLowerCase()
         for (el of produtos){

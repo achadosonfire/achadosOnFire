@@ -189,10 +189,22 @@ body{
     }
 }
 
-@media (max-width: 414px){
-    .topicos-btns button{
-        max-width: 162px;
-        padding: 15px;
+@media (max-width: 410px){
+    .principal .logo-info-container{
+        margin-top: 0px;  
+    }
+    
+    .principal .logo-info-container img{
+        margin-top: -2px;
+    }
+    
+    .principal .logo-info-container h4{
+        margin-top: -45px !important;
+        margin-bottom: 0px;
+    }
+    
+    .principal .logo-info-container p{
+        margin: 8px;
     }
 }
 
@@ -215,6 +227,10 @@ body{
         flex-wrap: wrap;
     }
 
+    .topicos-btns button{
+        width: 175px;
+    }
+
 
     .btn-ver-mais p{
         font-size: 14px ;
@@ -228,16 +244,16 @@ body{
 
 }
 
-@media (max-width: 345px){
+@media (max-width: 374px){
     .topicos-btns button{
-        max-width: 300px;
+        width: 150px;
     }
 }
 
 @media (max-width: 325px){
 
     .topicos-btns button{
-        width: 300px
+        width: 300px;
     }
 
     /* .produtos-container{
