@@ -12,7 +12,7 @@
     <div class="principal">
         <header>
             <div class="input-container">
-                <input autofocus type="text" placeholder="Buscar produtos">
+                <input id="search_input" onkeyup="procurar(event)" autofocus type="text" placeholder="Buscar produtos">
                 <span class="material-symbols-outlined">
                     search
                 </span>
@@ -30,24 +30,82 @@
                 </div>
             </div>
         </header>
-        <div class="topicos-btns">
-            <button class="casa-e-decoracao">
+        <div onclick="alterar_topicos(event)" class="topicos-btns">
+            <button class="casa-e-decoracao" id="casa-e-decoracao">
                 Casa e Decoração
             </button>
-            <button class="eletronicos">
+            <button class="eletronicos" id="eletronicos">
                 Eletrônicos
             </button>
+            <button class="moda-e-roupas hide" id="moda-e-roupas">
+                Roupas e Moda
+            </button>
+            <button class="maes-e-bebes hide" id="maes-e-bebes">
+                Mães e Bebes
+            </button>
+            <span onclick="mostrar_mais_topicos(this)" class="btn-ver-mais">
+                <p>Ver mais</p> <i class="material-symbols-outlined seta">expand_more</i>
+            </span>
         </div>
-        <div class="produtos-container">
-            <div class="produto">
-                <img src="../imgs/teste.jfif" alt="">
-                <h2>Lorem Teste</h2>
-            </div>
-            <div class="produto">
-                <img src="../imgs/teste.jfif" alt="">
-                <h2>Lorem Teste</h2>
-            </div>
+        <div class="produtos-container produtos-casa-e-decoracao">
+            <a target="_blank" href="https://shope.ee/5UwmeYK9tB">
+                <div class="produto">
+                    <img src="../imgs/teste.jfif" alt="">
+                    <h2>Lorem Teste</h2>
+                </div>
+            </a>
+            <a target="_blank" href="#">
+                <div class="produto">
+                    <img src="../imgs/teste.jfif" alt="">
+                    <h2>Lorem Teste 2</h2>
+                </div>
+            </a>
         </div>
+        <div class="produtos-container produtos-eletronicos hide">
+            <a href="#">
+                <div class="produto">
+                    <!-- <img src="../imgs/teste.jfif" alt="">
+                    <h2>Ainda não a nada por aqui :)</h2> -->
+                </div>
+            </a>
+            <a href="#">
+                <div class="produto">
+                    <!-- <img src="../imgs/teste.jfif" alt="">
+                    <h2>Ainda não a nada por aqui :)</h2> -->
+                </div>
+            </a>
+        </div>
+        <div class="produtos-container produtos-moda-e-roupas hide">
+            <a href="#">
+                <div class="produto">
+                    <!-- <img src="../imgs/teste.jfif" alt="">
+                    <h2>Lorem Teste 5</h2> -->
+                </div>
+            </a>
+            <a href="#">
+                <div class="produto">
+                    <!-- <img src="../imgs/teste.jfif" alt="">
+                    <h2>Lorem Teste 6</h2> -->
+                </div>
+            </a>
+        </div>
+        <div class="produtos-container produtos-maes-e-bebes hide">
+            <a href="#">
+                <div class="produto">
+                    <!-- <img src="../imgs/teste.jfif" alt="">
+                    <h2>Lorem Teste 7</h2> -->
+                </div>
+            </a>
+            <a href="#">
+                <div class="produto">
+                    <!-- <img src="../imgs/teste.jfif" alt="">
+                    <h2>Lorem Teste 8</h2> -->
+                </div>
+            </a>
+        </div>
+        <p class="msg-error hide">Nenhum Produto Encontrado! 😕</p>
     </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>

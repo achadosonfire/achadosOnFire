@@ -55,9 +55,23 @@ body{
     color: #f12711;
 }
 
-.logo-insta{
+.medias-container{
+    display: flex;
+    justify-content: center;
+    gap: 75px;
+    flex-wrap: wrap;
+    width: 100%;
     margin-top: 40px !important;
+}
+
+.medias{
     width: 40px !important;
+}
+
+.ttk{
+    padding: 2px;
+    border: 4px solid rgb(37, 37, 37);
+    border-radius: 10px;
 }
 
 
