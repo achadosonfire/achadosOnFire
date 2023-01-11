@@ -229,6 +229,8 @@ body{
 
     .topicos-btns button{
         width: 175px;
+        font-size: 12px;
+        padding: 12px 0px;
     }
 
 
