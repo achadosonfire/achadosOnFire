@@ -41,6 +41,7 @@ body{
     padding: 17px 17px 17px 40px;
     border: none;
     border-radius: 5px;
+    box-shadow: 2px 3px 8px rgb(0, 0, 0);
 }
 
 .principal header .material-symbols-outlined{
@@ -105,11 +106,12 @@ body{
 
 .btn-ver-mais{
     user-select: none;
+    width: 120px;
+    margin: auto;
     display: flex;
-    width: 100%;
     justify-content: center;
     align-items: center;
-    padding: 5px;
+    padding: 0px 5px 10px 5px;
     cursor: pointer;
 }
 
@@ -129,14 +131,23 @@ body{
 /* Produtos */
 
 .produtos-container{
-    padding: 20px;
+    padding: 20px 10px;
     background-color: rgb(241, 241, 241);
     display: flex;
+    justify-content: center;
     gap: 15px;
+}
+
+.no-gap{
+    gap: 0px !important;
 }
 
 .produtos-container a{
     background-color: white;
+}
+
+.produtos-container a:hover{
+    box-shadow: 0px 0px 4px rgb(160, 160, 160);
 }
 
 .produto{
@@ -144,6 +155,7 @@ body{
     background-color: white;
     cursor: pointer;
 }
+
 
 .produto img{
     display: block;
@@ -177,6 +189,13 @@ body{
     }
 }
 
+@media (max-width: 414px){
+    .topicos-btns button{
+        max-width: 162px;
+        padding: 15px;
+    }
+}
+
 @media (max-width: 400px){
     .principal .logo-info-container{
         flex-direction: column;
@@ -196,19 +215,32 @@ body{
         flex-wrap: wrap;
     }
 
-    .topicos-btns button{
-        width: 320px;
-        padding: 15px;
-    }
 
     .btn-ver-mais p{
         font-size: 14px ;
     }
 
+    /* produtos */
+
+    .produto h2{
+        font-size: 15px;
+    }
+
 }
 
-@media (max-width: 360px){
-    .produtos-container{
-        flex-wrap: wrap;
+@media (max-width: 345px){
+    .topicos-btns button{
+        max-width: 300px;
     }
+}
+
+@media (max-width: 325px){
+
+    .topicos-btns button{
+        width: 300px
+    }
+
+    /* .produtos-container{
+        flex-wrap: wrap;
+    } */
 }

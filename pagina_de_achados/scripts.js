@@ -1,5 +1,6 @@
 const qs = el => document.querySelector(el)
 const cl = el => console.log(el)
+const logo_info_container = qs('.logo-info-container')
 const produtos_containers = document.querySelectorAll('.produtos-container')
 const produtos = document.querySelectorAll('.produto')
 const search_input = qs('#search_input')
@@ -14,6 +15,10 @@ function alterar_topicos({target}){
             el.classList.add('hide')
         }
         msg_error.classList.add('hide')
+        logo_info_container.classList.remove('hide')
+        for (el of produtos_containers){
+            el.classList.remove('no-gap')
+        }
         switch (topico){
             case "casa-e-decoracao":
                 for (el of produtos_containers){
@@ -52,6 +57,7 @@ function alterar_topicos({target}){
 
 // FUNCTION MOSTRAR MAIS TOPICOS
 
+const btn_ver_mais = qs('.btn-ver-mais')
 const btn_roupas = qs('.moda-e-roupas')
 const btn_maes = qs('.maes-e-bebes')
 const seta = qs('.seta')
@@ -76,7 +82,15 @@ function procurar(e){
         for (el of produtos_containers){
             el.classList.add('hide')
         }
+        if (!btn_maes.classList.contains('hide')){
+            btn_ver_mais.children[0].innerHTML = 'Ver mais'
+            btn_roupas.classList.add('hide')
+            btn_maes.classList.add('hide')
+            seta.classList.remove('seta_cima')
+        }
+        logo_info_container.classList.add('hide')
         msg_error.classList.remove('hide')
+
         let busca_do_usuario = search_input.value.toLowerCase()
         for (el of produtos){
             let item_desejado = el.children[1].innerText.toLowerCase()
@@ -85,6 +99,9 @@ function procurar(e){
                 el.parentNode.parentNode.classList.remove('hide')
                 el.classList.remove('hide')
                 msg_error.classList.add('hide')
+                for (el of produtos_containers){
+                    el.classList.add('no-gap')
+                }
             }
         }
     }
@@ -98,6 +115,10 @@ function procurar(e){
                     el.classList.add('hide')
                 }
             }
+        }
+        logo_info_container.classList.remove('hide')
+        for (el of produtos_containers){
+            el.classList.remove('no-gap')
         }
         for (el of produtos){
             el.classList.remove('hide')
