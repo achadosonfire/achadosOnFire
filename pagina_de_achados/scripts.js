@@ -6,6 +6,12 @@ const produtos = document.querySelectorAll('.produto')
 const search_input = qs('#search_input')
 const msg_error = qs('.msg-error')
 
+// FUNCTION TECLADO CELULAR
+
+search_input.addEventListener('click', ()=>{
+    search_input.setAttribute('inputmode', 'text')
+})
+
 // FUNCTION ALTERAR TOPICOS
 
 function alterar_topicos({target}){
