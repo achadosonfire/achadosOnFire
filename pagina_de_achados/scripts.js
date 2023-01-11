@@ -5,6 +5,29 @@ const produtos_containers = document.querySelectorAll('.produtos-container')
 const produtos = document.querySelectorAll('.produto')
 const search_input = qs('#search_input')
 const msg_error = qs('.msg-error')
+const btn_voltar = qs('.btn-voltar')
+
+// FUNCTION VOLTAR
+
+function voltar(){
+    btn_voltar.classList.add('hide')
+    msg_error.classList.add('hide')
+    logo_info_container.classList.remove('hide')
+    for (el of produtos_containers){
+        el.classList.remove('no-gap')
+    }
+    for (el of produtos_containers){
+        el.classList.add('hide')
+        if (el.classList.contains('produtos-casa-e-decoracao')){
+            el.classList.remove('hide')
+        }
+    }
+    for (el of produtos){
+        el.classList.remove('hide')
+        el.parentNode.style.width = '45%'
+    }
+    search_input.value = ''
+}
 
 // FUNCTION ALTERAR TOPICOS
 
@@ -15,10 +38,12 @@ function alterar_topicos({target}){
             el.classList.add('hide')
         }
         msg_error.classList.add('hide')
+        btn_voltar.classList.add('hide')
         logo_info_container.classList.remove('hide')
         for (el of produtos_containers){
             el.classList.remove('no-gap')
         }
+        search_input.value = ''
         switch (topico){
             case "casa-e-decoracao":
                 for (el of produtos_containers){
@@ -51,6 +76,7 @@ function alterar_topicos({target}){
         }
         for (el of produtos){
             el.classList.remove('hide')
+            el.parentNode.style.width = '45%'
         }
     }
 }
@@ -90,6 +116,7 @@ function procurar(e){
         }
         logo_info_container.classList.add('hide')
         msg_error.classList.remove('hide')
+        btn_voltar.classList.remove('hide')
         search_input.setAttribute('inputmode', 'none')
         setTimeout(()=>{
             search_input.removeAttribute('inputmode')
@@ -103,6 +130,7 @@ function procurar(e){
                 el.parentNode.parentNode.classList.remove('hide')
                 el.classList.remove('hide')
                 msg_error.classList.add('hide')
+                el.parentNode.style.width = '60%'
                 for (el of produtos_containers){
                     el.classList.add('no-gap')
                 }
@@ -127,6 +155,7 @@ function procurar(e){
         for (el of produtos){
             el.classList.remove('hide')
             msg_error.classList.add('hide')
+            el.parentNode.style.width = '45%'
         }
         
     } 

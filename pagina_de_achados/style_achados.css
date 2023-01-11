@@ -134,6 +134,7 @@ body{
     padding: 20px 10px;
     background-color: rgb(241, 241, 241);
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
 }
@@ -143,7 +144,8 @@ body{
 }
 
 .produtos-container a{
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+    width: 45%;
 }
 
 .produtos-container a:hover{
@@ -151,8 +153,7 @@ body{
 }
 
 .produto{
-    max-width: 322px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     cursor: pointer;
 }
 
@@ -164,6 +165,7 @@ body{
 
 .produto h2{
     margin-left: 20px;
+    margin-right: 20px;
     font-weight: 200;
 }
 
@@ -173,6 +175,20 @@ body{
     width: 100%;
     text-align: center;
     background-color: rgb(241, 241, 241);
+}
+
+.btn-voltar{
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    padding: 5px 15px;
+    background-color: white;
+    border: 1px solid rgb(160, 160, 160);
+    cursor: pointer;
+}
+
+.btn-voltar:hover{
+    box-shadow: 0px 0px 4px lightgray;
 }
 
 
@@ -239,6 +255,10 @@ body{
     }
 
     /* produtos */
+
+    .produtos-container a{
+        background-color: white;
+    }
 
     .produto h2{
         font-size: 15px;
