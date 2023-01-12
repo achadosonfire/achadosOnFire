@@ -157,6 +157,6 @@ function procurar(e){
             msg_error.classList.add('hide')
             el.parentNode.style.width = '45%'
         }
-        
+        btn_voltar.classList.add('hide')
     } 
 }
