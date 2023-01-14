@@ -59,9 +59,9 @@ function alterar_topicos({target}){
                     }
                 }
                 break
-            case "moda-e-roupas":
+            case "volta-as-aulas":
                 for (el of produtos_containers){
-                    if (el.classList.contains('produtos-moda-e-roupas')){
+                    if (el.classList.contains('produtos-volta-as-aulas')){
                         el.classList.remove('hide')
                     }
                 }
@@ -73,7 +73,21 @@ function alterar_topicos({target}){
                     }
                 }
                 break
-        }
+            case "camisetas":
+                for (el of produtos_containers){
+                    if (el.classList.contains('produtos-camisetas')){
+                        el.classList.remove('hide')
+                    }
+                }
+                break
+            case "acessorios":
+                for (el of produtos_containers){
+                    if (el.classList.contains('produtos-acessorios')){
+                        el.classList.remove('hide')
+                    }
+                }
+                break
+            }
         for (el of produtos){
             el.classList.remove('hide')
             el.parentNode.style.width = '45%'
@@ -84,8 +98,10 @@ function alterar_topicos({target}){
 // FUNCTION MOSTRAR MAIS TOPICOS
 
 const btn_ver_mais = qs('.btn-ver-mais')
-const btn_roupas = qs('.moda-e-roupas')
+const btn_volta_aulas = qs('.volta-as-aulas')
 const btn_maes = qs('.maes-e-bebes')
+const btn_camisetas = qs('.camisetas')
+const btn_acessorios = qs('.acessorios')
 const seta = qs('.seta')
 function mostrar_mais_topicos(element){
     if (btn_maes.classList.contains('hide')){
@@ -93,8 +109,10 @@ function mostrar_mais_topicos(element){
     } else{
         element.children[0].innerHTML = 'Ver mais'
     }
-    btn_roupas.classList.toggle('hide')
+    btn_volta_aulas.classList.toggle('hide')
     btn_maes.classList.toggle('hide')
+    btn_camisetas.classList.toggle('hide')
+    btn_acessorios.classList.toggle('hide')
     seta.classList.toggle('seta_cima')
 }
 
@@ -126,7 +144,6 @@ function procurar(e){
         for (el of produtos){
             let item_desejado = el.children[1].innerText.toLowerCase()
             if (busca_do_usuario == item_desejado){
-                cl('produto encontrado!')
                 el.parentNode.parentNode.classList.remove('hide')
                 el.classList.remove('hide')
                 msg_error.classList.add('hide')
