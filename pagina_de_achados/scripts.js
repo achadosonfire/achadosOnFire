@@ -92,6 +92,7 @@ function alterar_topicos({target}){
             el.classList.remove('hide')
             el.parentNode.style.width = '45%'
         }
+        esconder_topicos()
     }
 }
 
@@ -116,9 +117,21 @@ function mostrar_mais_topicos(element){
     seta.classList.toggle('seta_cima')
 }
 
+function esconder_topicos(){
+    if (!btn_maes.classList.contains('hide')){
+        btn_ver_mais.children[0].innerHTML = 'Ver mais'
+        btn_volta_aulas.classList.add('hide')
+        btn_maes.classList.add('hide')
+        btn_camisetas.classList.add('hide')
+        btn_acessorios.classList.add('hide')
+        seta.classList.remove('seta_cima')
+    }
+}
+
 // FUNCTION PROCURAR
 
 function procurar(e){
+    esconder_topicos()
     if (e.keyCode == 13){
         for (el of produtos){
             el.classList.add('hide')
@@ -128,8 +141,10 @@ function procurar(e){
         }
         if (!btn_maes.classList.contains('hide')){
             btn_ver_mais.children[0].innerHTML = 'Ver mais'
-            btn_roupas.classList.add('hide')
+            btn_volta_aulas.classList.add('hide')
             btn_maes.classList.add('hide')
+            btn_camisetas.classList.add('hide')
+            btn_acessorios.classList.add('hide')
             seta.classList.remove('seta_cima')
         }
         logo_info_container.classList.add('hide')

@@ -5,6 +5,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+button{
+    color: black !important;
+}
+
 a{
     text-decoration: none;
     color: black;
@@ -132,7 +136,7 @@ body{
 
 .produtos-container{
     padding: 20px 10px;
-    background-color: rgb(241, 241, 241);
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -146,10 +150,11 @@ body{
 .produtos-container a{
     background-color: rgb(255, 255, 255);
     width: 45%;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
 }
 
 .produtos-container a:hover{
-    box-shadow: 0px 0px 4px rgb(160, 160, 160);
+    box-shadow: 0px 0px 4px rgb(100, 100, 100);
 }
 
 .produto{
@@ -174,7 +179,7 @@ body{
     padding: 15px;
     width: 100%;
     text-align: center;
-    background-color: rgb(241, 241, 241);
+    background-color: #dcdcdc;
 }
 
 .btn-voltar{
@@ -205,9 +210,21 @@ body{
     }
 }
 
+@media (max-width: 425px){
+    .topicos-btns button{
+        width: 175px;
+        font-size: 12px;
+        padding: 12px 0px;
+    }
+}
+
 @media (max-width: 410px){
     .principal .logo-info-container{
-        margin-top: 0px;  
+        margin-top: 0;
+        flex-direction: column;
+    
+        align-items: center;
+        text-align: center;
     }
     
     .principal .logo-info-container img{
@@ -225,12 +242,6 @@ body{
 }
 
 @media (max-width: 400px){
-    .principal .logo-info-container{
-        flex-direction: column;
-    
-        align-items: center;
-        text-align: center;
-    }
 
     .principal .logo-info-container h4{
         margin-top: -25px;
@@ -241,12 +252,6 @@ body{
     .topicos-btns{
         padding: 15px 0px;
         flex-wrap: wrap;
-    }
-
-    .topicos-btns button{
-        width: 175px;
-        font-size: 12px;
-        padding: 12px 0px;
     }
 
 
@@ -275,7 +280,7 @@ body{
 @media (max-width: 325px){
 
     .topicos-btns button{
-        width: 300px;
+        width: 140px;
     }
 
     /* .produtos-container{
